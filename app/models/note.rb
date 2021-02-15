@@ -13,4 +13,12 @@ class Note < ApplicationRecord
     def subject_name
         self.subject ? self.subject.name : nil
     end
+
+    def summary_note=(summary)
+        self.summary = Summary.find_or_create_by(content: summary)
+    end
+
+    def summary_note
+        self.summary ? self.summary.content : nil
+    end
 end

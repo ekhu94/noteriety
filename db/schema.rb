@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_050713) do
   create_table "notes", force: :cascade do |t|
     t.string "topic"
     t.text "content"
+    t.text "summary"
     t.integer "user_id", null: false
     t.integer "subject_id", null: false
     t.datetime "created_at", precision: 6, null: false

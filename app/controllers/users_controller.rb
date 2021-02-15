@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def new
-        render layout: 'login'
         @user = User.new
+        render layout: 'login'
     end
 
     def create
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path
         else
-            render :new
+            render :new, layout: 'login'
         end
     end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
             redirect_to root_path
         else
             flash.now[:login_error] = "There was something wrong with your email or password."
-            render :login
+            render :login, layout: 'login'
         end
     end
 

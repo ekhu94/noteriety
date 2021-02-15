@@ -9,7 +9,6 @@ class NotesController < ApplicationController
     def new
         @note = Note.new
         3.times { @note.bullet_points.build }
-        @note.summaries.build
     end
 
     def create
