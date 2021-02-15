@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     def new
+        render layout: 'login'
         @user = User.new
     end
 
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
     end
 
     def login
+        render layout: 'login'
     end
 
     def login_action
