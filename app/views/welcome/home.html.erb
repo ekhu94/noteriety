@@ -1,0 +1,6 @@
+<h1>Noteriety Home Page</h1>
+<h2>Welcome, <%= current_user.username %></h2>
+
+<%= form_tag ({controller: 'users', action: 'logout', method: 'post'}) do %>
+    <%= submit_tag "Logout" %>
+<% end %>

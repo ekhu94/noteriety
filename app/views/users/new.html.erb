@@ -1,0 +1,33 @@
+<h1>Create a New User</h1>
+
+<%= form_for @user do |f| %>
+    <div>
+        <%= f.label :username, "Username: " %>
+        <%= f.text_field :username %>
+    </div>
+    <div>
+        <%= f.label :email, "Email Address: " %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :password, "Password: " %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f.label :password_confirmation, "Confirm Password: " %>
+        <%= f.password_field :password_confirmation %>
+    </div>
+    <%= f.submit "Sign Up for Noteriety!" %>
+<% end %>
+
+<% if @user.errors.any? %>
+    <div>The following errors occurred:</div>
+    <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<h4>Already a member?</h4>
+<button><%= link_to "Login", login_path %></button>
