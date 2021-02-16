@@ -1,5 +1,11 @@
 <h1 class="display-4">Log In</h1>
 
+<% if flash[:logged_out] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:logged_out] %>
+    </div>
+<% end %>
+
 <%= form_tag ({controller: 'users', action: 'login_action', method: 'post'}) do %>
     <div>
         <%= label_tag "Email Address: " %>

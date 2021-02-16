@@ -1,0 +1,8 @@
+<h1 class="display-3">All Subjects</h1>
+
+<% @subjects.each do |s| %>
+    <h2 class="display-6"><%= link_to s.name, subject_path(s) %></h2>
+    <div>
+        <% s.notes %>
+    </div>
+<% end %>

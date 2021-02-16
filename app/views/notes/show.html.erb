@@ -6,7 +6,7 @@
         <% @note.bullet_points.each do |bp| %>
             <li>
                 <%= bp.keywords %>
-                
+                <a href=""><i class="far fa-trash-alt text-danger"></i></a>
             </li>
         <% end %>
     </ul>
@@ -15,5 +15,5 @@
 <p><%= @note.content %></p>
 <h4>Summary</h4>
 <p><%= @note.summary_note %></p>
-<button><%= link_to "Edit", edit_note_path %></button>
-<button><%= link_to "Back to all notes", notes_path %></button>
+<%= link_to "Edit", edit_note_path, class: 'btn btn-outline-secondary' %>
+<%= link_to "Back to all notes", notes_path, class: 'btn btn-outline-info' %>

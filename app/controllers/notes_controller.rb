@@ -30,7 +30,7 @@ class NotesController < ApplicationController
     end
 
     def update
-        if @note.update(note_params)
+        if @note.update(update_params)
             redirect_to note_path(@note)
         else
             render :edit
@@ -41,6 +41,10 @@ class NotesController < ApplicationController
 
     def set_note
         @note = Note.find(params[:id])
+    end
+
+    def update_params
+        params.require(:note).permit(:topic, :content, :subject_name, :summary_note, :bullet_point_contents)
     end
 
     def note_params

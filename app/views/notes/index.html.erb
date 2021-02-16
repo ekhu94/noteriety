@@ -6,4 +6,5 @@
     <div><%= n.created_at.strftime('%B %d, %Y') %></div>
 <% end %>
 
-<button><%= link_to "Home", root_path %></button>
+<%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-secondary' %>
+<%= link_to "Home", root_path, class: 'btn btn-outline-success' %>

@@ -5,6 +5,8 @@ class Note < ApplicationRecord
     has_one :summary, dependent: :destroy
 
     validates :topic, :content, presence: true
+    validates :bullet_points, length: { minimum: 1, too_short: "At least 1 bullet point is required",
+                                        maximum: 3, too_long: "3 bullet points is the maximum permitted" }
     validates_presence_of :summary_note, message: "must be included at the end"
 
     def subject_name=(name)
