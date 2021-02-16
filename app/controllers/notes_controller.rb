@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
 
     def index
-        @notes = Note.where(user: current_user)
+        @notes = Note.where(user: current_user).sort { |a, b| b.created_at <=> a.created_at }
     end
 
     def show
