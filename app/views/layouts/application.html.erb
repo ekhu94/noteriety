@@ -33,16 +33,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="<%= notes_path %>">Notes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Subjects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<%= notes_path %>">Notes</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="<%= summaries_path %>">Summaries</a>
+            </li>
+            <li class="nav-item dropdown ml-auto">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.username %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="<%= root_path %>">Home</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
             </li>
           </ul>
         </div>

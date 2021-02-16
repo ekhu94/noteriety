@@ -1,6 +1,4 @@
-<h1>Log In</h1>
-
-<%= flash.now[:login_error] %>
+<h1 class="display-4">Log In</h1>
 
 <%= form_tag ({controller: 'users', action: 'login_action', method: 'post'}) do %>
     <div>
@@ -12,6 +10,12 @@
         <%= password_field_tag :password, params[:password] %>
     </div>
     <%= submit_tag "Login", class: "btn btn-outline-primary" %>
+<% end %>
+
+<% if flash.now[:login_error] %>
+    <div class="alert alert-danger" role="alert">
+        <%= flash.now[:login_error] %>
+    </div>
 <% end %>
 
 <h4>New User?</h4>
