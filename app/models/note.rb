@@ -4,7 +4,8 @@ class Note < ApplicationRecord
     has_many :bullet_points, dependent: :destroy
     has_one :summary, dependent: :destroy
 
-    validates :summary, presence: true
+    validates :topic, :content, presence: true
+    validates_presence_of :summary_note, message: "must be included at the end"
 
     def subject_name=(name)
         self.subject = Subject.find_or_create_by(name: name)

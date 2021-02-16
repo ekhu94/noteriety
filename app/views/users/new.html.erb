@@ -1,4 +1,4 @@
-<h1>Create a New User</h1>
+<h1 class="display-3">Create a New User</h1>
 
 <%= form_for @user do |f| %>
     <div>
@@ -17,17 +17,19 @@
         <%= f.label :password_confirmation, "Confirm Password: " %>
         <%= f.password_field :password_confirmation %>
     </div>
-    <%= f.submit "Sign Up for Noteriety!" %>
+    <%= f.submit "Sign Up for Noteriety!", class: 'btn btn-outline-primary' %>
 <% end %>
 
 <% if @user.errors.any? %>
-    <div>The following errors occurred:</div>
-    <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">The following errors occurred while attempting to sign up:</h4>
+    <hr>
+    <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 <% end %>
 
-<h4>Already a member?</h4>
-<button><%= link_to "Login", login_path %></button>
+<div class="display-5">Already a member?</div>
+<%= link_to "Login", login_path, class: 'btn btn-outline-secondary' %>
