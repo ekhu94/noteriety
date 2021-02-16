@@ -1,0 +1,4 @@
+<h1>Edit a Note</h1>
+
+<%= render partial: 'form', locals: {note: @note} %>
+<button><%= link_to "Back", note_path(@note) %></button>

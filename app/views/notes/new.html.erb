@@ -1,43 +1,4 @@
 <h1>Create a New Note</h1>
 
-<%= form_for @note do |f| %>
-    <div>
-        <%= f.label :topic %><br>
-        <%= f.text_field :topic %>
-    </div>
-    <div>
-        <%= f.label :subject_name, "Subject" %><br>
-        <%= f.text_field :subject_name, list: "subjects_autocomplete" %>
-        <datalist id="subjects_autocomplete">
-            <% Subject.all.each do |s| %>
-                <option value="<%= s.name %>">
-            <% end %>
-        </datalist>
-    </div>
-    <div>
-        <%= f.label :content %><br>
-        <%= f.text_area :content %>
-    </div>
-    <div>
-        <label>Keywords/Questions</label><br>
-        <input name="note[bullet_point_contents][]" id="keywords_1"><br>
-        <input name="note[bullet_point_contents][]" id="keywords_2"><br>
-        <input name="note[bullet_point_contents][]" id="keywords_3"><br>
-    </div>
-    <div>
-        <%= f.label :summary_note %><br>
-        <%= f.text_area :summary_note %>
-    </div>
-    <div>
-        <%= f.submit %>
-    </div>
-<% end %>
-
-<% if @note.errors.any? %>
-    <h4>There were some errors in your form.</h4>
-    <ul>
-        <% @note.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
+<%= render partial: 'form', locals: {note: @note} %>
+<button><%= link_to "Back", notes_path %></button>
