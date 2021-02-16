@@ -1,0 +1,9 @@
+<h1>All Notes</h1>
+
+<% @notes.each do |n| %>
+    <h3><%= link_to n.topic, note_path(n) %></h3>
+    <div><strong>Content</strong></div>
+    <p><%= n.content %></p>
+<% end %>
+
+<button><%= link_to "Home", root_path %></button>

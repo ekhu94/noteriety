@@ -32,3 +32,12 @@
         <%= f.submit %>
     </div>
 <% end %>
+
+<% if @note.errors.any? %>
+    <h4>There were some errors in your form.</h4>
+    <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Topic: <%= @note.topic %></h1>
+<h4>Bullet Points:</h4>
+<ul>
+    <% @note.bullet_points.each do |bp| %>
+        <li><%= bp.keywords %></li>
+    <% end %>
+</ul>
+<h4>Content</h4>
+<p><%= @note.content %></p>
+<h4>Summary</h4>
+<p><%= @note.summary_note %></p>
+<button><%= link_to "Back to all notes", notes_path %></button>
