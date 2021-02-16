@@ -30,8 +30,8 @@ class NotesController < ApplicationController
     end
 
     def update
-        if @note.update
-            redirect_to root_path
+        if @note.update(note_params)
+            redirect_to note_path(@note)
         else
             render :edit
         end

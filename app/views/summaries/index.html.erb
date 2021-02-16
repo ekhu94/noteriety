@@ -1,0 +1,9 @@
+<h1>All Summaries</h1>
+
+<% current_user.subjects.uniq.each do |subject| %>
+    <h4>Subject: <%= subject.name %></h4>
+    <% subject.notes.each do |n| %>
+        <div><%= link_to n.topic, note_path(n) %></div>
+    <% end %>
+<% end %>
+

@@ -2,7 +2,6 @@ class Note < ApplicationRecord
     belongs_to :user
     belongs_to :subject
     has_many :bullet_points, dependent: :destroy
-    accepts_nested_attributes_for :bullet_points
     has_one :summary, dependent: :destroy
 
     validates :summary, presence: true
