@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :subject_destroy
     before_action :require_login
     before_action :set_note, only: [:show, :edit, :update, :destroy]
 
@@ -27,27 +27,36 @@ class NotesController < ApplicationController
     end
 
     def edit
+        3.times { @note.bullet_points.build if @note.bullet_points.length < 3 }
     end
 
     def update
-        if @note.update(update_params)
+        if @note.update(note_params)
             redirect_to note_path(@note)
         else
             render :edit
         end
     end
 
+    def destroy
+        @note.destroy
+        subject_destroy(@note.subject)
+        flash.now[:destroy_success] = "You have successfully deleted this note."
+        redirect_to root_path
+    end
+
     private
+
+    def destroy_bullet_point(bullet_point)
+        bullet_point.destroy
+        redirect_to note_path(@note)
+    end
 
     def set_note
         @note = Note.find(params[:id])
     end
 
-    def update_params
-        params.require(:note).permit(:topic, :content, :subject_name, :summary_note, :bullet_point_contents)
-    end
-
     def note_params
-        params.require(:note).permit(:topic, :content, :subject_name, :summary_note, bullet_point_contents: [])
+        params.require(:note).permit(:topic, :content, :subject_name, :summary_note, bullet_points_attributes: [:keywords])
     end
 end

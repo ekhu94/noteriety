@@ -17,10 +17,10 @@
         <%= f.text_area :content %>
     </div>
     <div>
-        <label>Keywords/Questions</label><br>
-        <input name="note[bullet_point_contents][]" id="keywords_1"><br>
-        <input name="note[bullet_point_contents][]" id="keywords_2"><br>
-        <input name="note[bullet_point_contents][]" id="keywords_3"><br>
+        <%= f.fields_for :bullet_points do |builder| %>
+            <%= builder.label :keywords, "Keywords/Questions" %>
+            <%= builder.text_field :keywords, :rows => 3 %><br>
+        <% end %>
     </div>
     <div>
         <%= f.label :summary_note, "Summary" %><br>

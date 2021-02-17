@@ -1,18 +1,22 @@
 <h1>Topic: <%= @note.topic %></h1>
 <h3>Subject: <%= @note.subject.name %></h3>
+<h4>Content</h4>
+<p><%= @note.content %></p>
 <% if @note.bullet_points.any? %>
     <h4>Bullet Points</h4>
     <ul>
         <% @note.bullet_points.each do |bp| %>
-            <li>
-                <%= bp.keywords %>
-                <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-            </li>
+            <% if bp.keywords.present? %>
+                <li>
+                    <%= link_to bullet_point_path(bp), method: :delete, class: 'btn btn-white' do %>
+                        <i class="fas fa-ban text-danger"></i>
+                    <% end %>
+                    <%= bp.keywords %>
+                </li>
+            <% end %>
         <% end %>
     </ul>
 <% end %>
-<h4>Content</h4>
-<p><%= @note.content %></p>
 <h4>Summary</h4>
 <p><%= @note.summary_note %></p>
 <%= link_to "Edit", edit_note_path, class: 'btn btn-outline-secondary' %>

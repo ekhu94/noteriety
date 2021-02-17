@@ -2,10 +2,11 @@ class Note < ApplicationRecord
     belongs_to :user
     belongs_to :subject
     has_many :bullet_points, dependent: :destroy
+    accepts_nested_attributes_for :bullet_points
     has_one :summary, dependent: :destroy
 
     validates :topic, :content, presence: true
-    validates :bullet_points, length: { minimum: 1, too_short: "At least 1 bullet point is required",
+    validates :bullet_points, presence: true, length: { minimum: 1, too_short: "At least 1 bullet point is required",
                                         maximum: 3, too_long: "3 bullet points is the maximum permitted" }
     validates_presence_of :summary_note, message: "must be included at the end"
 
@@ -17,15 +18,14 @@ class Note < ApplicationRecord
         self.subject ? self.subject.name : nil
     end
 
-    def bullet_point_contents=(contents)
-        contents.each do |c|
-            if c.strip != ""
-                self.bullet_points.build(keywords: c)
-            end
+    def bullet_points_attributes=(attributes)
+        attributes.values.each do |c|
+            bullet_point = BulletPoint.find_or_create_by(c)
+            self.bullet_points << bullet_point if !self.bullet_points.find_by(id: bullet_point.id) && bullet_point.keywords.present?
         end
     end
 
-    def bullet_point_contents
+    def bullet_points_attributes
         self.bullet_points.map { |bp| bp.keywords }
     end
 

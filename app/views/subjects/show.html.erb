@@ -1,0 +1,24 @@
+<h1 class="display-3"><%= @subject.name %></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Topic</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @subject.notes.each do |n| %>
+            <tr>
+                <td><%= link_to n.topic, note_path(n) %></td>
+                <td><a href="<%= edit_note_path %>"><i class="far fa-edit ms-2 text-info"></i></a></td>
+                <td>
+                    <%= link_to note_path(n), method: :delete, class: 'btn btn-white ms-3 p-0' do %>
+                        <i class="fas fa-ban text-danger"></i>
+                    <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to "Back", subjects_path, class: 'btn btn-outline-info' %>

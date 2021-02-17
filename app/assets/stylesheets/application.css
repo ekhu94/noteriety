@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+}
+
+.navbar.navbar-expand-md.navbar-dark {
+    font-size: 1.2rem;
+    background-color: #028996;
+}
+
+a {
+    color: #b85c3a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e2a58f;
+}

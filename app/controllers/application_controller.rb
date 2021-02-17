@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
         redirect_to '/login' unless logged_in?
     end
 
+    def subject_destroy(subject)
+        subject.destroy if subject.notes.length == 0
+    end
+
 end
