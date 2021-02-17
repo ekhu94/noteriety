@@ -10,6 +10,14 @@ class Note < ApplicationRecord
                                         maximum: 3, too_long: "3 bullet points is the maximum permitted" }
     validates_presence_of :summary_note, message: "must be included at the end"
 
+    def self.search(query)
+        if query.present?
+            self.where('lower(topic) LIKE ?', "%#{query.downcase}%")
+        else
+            self.all
+        end
+    end
+
     def subject_name=(name)
         self.subject = Subject.find_or_create_by(name: name)
     end

@@ -1,4 +1,11 @@
-<h1>All Notes</h1>
+<h1>Search for notes</h1>
+
+<div>
+    <%= form_tag notes_path, method: :get do %>
+        <%= text_field_tag :query, params[:query] %>
+        <%= submit_tag "Search", title: nil %>
+    <% end %>
+</div>
 
 <% @notes.each do |n| %>
     <h3><%= link_to n.topic, note_path(n) %></h3>

@@ -1,36 +1,3 @@
-<%= form_for note do |f| %>
-    <div>
-        <%= f.label :topic %><br>
-        <%= f.text_field :topic %>
-    </div>
-    <div>
-        <%= f.label :subject_name, "Subject" %><br>
-        <%= f.text_field :subject_name, list: "subjects_autocomplete" %>
-        <datalist id="subjects_autocomplete">
-            <% Subject.all.each do |s| %>
-                <option value="<%= s.name %>">
-            <% end %>
-        </datalist>
-    </div>
-    <div>
-        <%= f.label :content %><br>
-        <%= f.text_area :content %>
-    </div>
-    <div>
-        <%= f.fields_for :bullet_points do |builder| %>
-            <%= builder.label :keywords, "Keywords/Questions" %>
-            <%= builder.text_field :keywords, :rows => 3 %><br>
-        <% end %>
-    </div>
-    <div>
-        <%= f.label :summary_note, "Summary" %><br>
-        <%= f.text_area :summary_note %>
-    </div>
-    <div>
-        <%= f.submit class: 'btn btn-outline-primary' %>
-    </div>
-<% end %>
-
 <% if note.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <h4 class="alert-heading">There were some errors in your form:</h4>
@@ -41,4 +8,56 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
+
+<div id="form-container" class="container shadow-lg">   
+    <h1 class="display-5 text-center">
+        <%= new_note_path ? "New Note" : "Edit Note" %>
+    </h1>
+    <%= form_for note do |f| %>
+        <div class="form-row">
+            <div class="form-group">
+                <%= f.label :topic %>
+                <%= f.text_field :topic, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :subject_name, "Subject" %>
+                <%= f.text_field :subject_name, list: "subjects_autocomplete", class: 'form-control', placeholder: 'Find a subject or create a new one' %>
+                <datalist id="subjects_autocomplete">
+                    <% Subject.all.each do |s| %>
+                        <option value="<%= s.name %>">
+                    <% end %>
+                </datalist>
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <%= f.label :content %>
+                <%= f.text_area :content, class: 'form-control', rows: '6', placeholder: 'Write down your main notes here...' %>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="bullet_points_attributes">Keywords/Questions</label>
+                <%= f.fields_for :bullet_points do |builder| %>
+                    <%= builder.text_field :keywords, :rows => 3, class: 'form-control mt-2' %>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <%= f.label :summary_note, "Summary" %><br>
+                <%= f.text_area :summary_note, class: 'form-control', rows: '6', placeholder: 'Gather your thoughts and write a summary about this topic...' %>
+            </div>
+        </div>
+        <dvi class="form-row">
+            <div class="form-group">
+                <%= f.submit class: 'form-control btn btn-outline-primary btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
+                <%= link_to "Back", notes_path, class: 'form-control btn btn-outline-info btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
+            </div>
+        </dvi>
+    <% end %>
+</div>
 
