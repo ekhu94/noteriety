@@ -1,23 +1,33 @@
-<h1>Topic: <%= @note.topic %></h1>
-<h3>Subject: <%= @note.subject.name %></h3>
-<h4>Content</h4>
-<p><%= @note.content %></p>
-<% if @note.bullet_points.any? %>
-    <h4>Bullet Points</h4>
-    <ul>
-        <% @note.bullet_points.each do |bp| %>
-            <% if bp.keywords.present? %>
-                <li>
-                    <%= link_to bullet_point_path(bp), method: :delete, class: 'btn btn-white' do %>
-                        <i class="fas fa-ban text-danger"></i>
-                    <% end %>
-                    <%= bp.keywords %>
-                </li>
+<div id="form-container" class="container shadow-lg">
+
+    <h1><%= @note.topic %></h1>
+    <h3 class="py-3">Subject: <%= @note.subject.name %></h3>
+    <h4>Content</h4>
+    <p><%= @note.content %></p>
+    <% if @note.bullet_points.any? %>
+        <h4>Key Points</h4>
+        <ul>
+            <% @note.bullet_points.each do |bp| %>
+                <% if bp.keywords.present? %>
+                    <li>
+                        <%= link_to bullet_point_path(bp), method: :delete, class: 'btn btn-white' do %>
+                            <i class="far fa-trash-alt text-danger"></i>
+                        <% end %>
+                        <%= bp.keywords %>
+                    </li>
+                <% end %>
             <% end %>
-        <% end %>
-    </ul>
-<% end %>
-<h4>Summary</h4>
-<p><%= @note.summary_note %></p>
-<%= link_to "Edit", edit_note_path, class: 'btn btn-outline-secondary' %>
-<%= link_to "Back to all notes", notes_path, class: 'btn btn-outline-info' %>
+        </ul>
+    <% end %>
+    <h4>Summary</h4>
+    <p><%= @note.summary_note %></p>
+    
+    <div class="row text-center my-4">
+        <div class="col-lg-1"></div>
+        <%= link_to "Edit", edit_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
+        <div class="col-md-2"></div>
+        <%= link_to "Back to all notes", notes_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
+        <div class="col-lg-1"></div>
+    </div>
+
+</div>
