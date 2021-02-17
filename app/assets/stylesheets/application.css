@@ -83,10 +83,9 @@ a#create-btn.btn.btn-outline-success {
     font-weight: 300;
     letter-spacing: 0.2em;
     border-radius: 16px;
-    margin: 1.8rem;
+    margin: 1.9rem;
     color: #ddb892;
     background-color: #ffffff;
-    border-radius: 12px;
     border-color: #ddb892;
     box-shadow: 0.2em 0.2em 0.2em #ddb892;
     padding: 1.2em 2.2em;
@@ -94,11 +93,11 @@ a#create-btn.btn.btn-outline-success {
 }
 
 a#create-btn.btn.btn-outline-success:hover {
-    color: #ffffff;
-    background-color: #ddb892;
-    border: 1px solid #ddb892;
-    box-shadow: none;
+    border: 1px solid #dfab78;
+    color: #dfab78;
+    /* font-weight: bold; */
     transform: scale(0.9, 0.9);
+    box-shadow: 0.5em 0.5em 0.5em #ddb892;
     transition: all 0.4s;
     cursor: pointer;
 }
