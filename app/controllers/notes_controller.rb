@@ -21,7 +21,7 @@ class NotesController < ApplicationController
         @note.user = current_user
         if @note.save
             current_user.notes << @note
-            redirect_to root_path
+            redirect_to note_path(@note)
         else
             render :new
         end

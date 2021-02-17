@@ -1,17 +1,29 @@
-<h1>Search for notes</h1>
+<div class="container text-center">
+    <h1 class="display-5 my-4">NOTES</h1>
+    <div>
+        <%= form_tag notes_path, method: :get do %>
+            <div class="form-group">
+            <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: "Find notes by topic..." %>
+            <%= submit_tag "Search", title: nil, class: 'btn btn-outline-success btn-lg btn-block', id: 'search-btn' %>
+            </div>
+        <% end %>
+    </div>
 
-<div>
-    <%= form_tag notes_path, method: :get do %>
-        <%= text_field_tag :query, params[:query] %>
-        <%= submit_tag "Search", title: nil %>
-    <% end %>
+    <div id="note-list" class="row m-2">
+        <% @notes.each do |n| %>
+            <div class="col-lg-4 col-sm-6">
+                <h5><%= link_to n.topic, note_path(n) %></h5>
+                <div>Subject: <%= link_to n.subject.name, subject_path(n.subject) %></div>
+                <div><%= n.created_at.strftime('%B %d, %Y') %></div>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="row text-center my-5">
+        <div class="col-md-1"></div>
+        <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg btn-block' , id: 'form-button' %>
+        <div class="col-md-2"></div>
+        <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg btn-block', id: 'form-button' %>
+        <div class="col-md-1"></div>
+    </div>
 </div>
-
-<% @notes.each do |n| %>
-    <h3><%= link_to n.topic, note_path(n) %></h3>
-    <div>Subject: <%= link_to n.subject.name, subject_path(n.subject) %></div>
-    <div><%= n.created_at.strftime('%B %d, %Y') %></div>
-<% end %>
-
-<%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-secondary' %>
-<%= link_to "Home", root_path, class: 'btn btn-outline-success' %>

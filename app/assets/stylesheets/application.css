@@ -23,6 +23,15 @@ body {
     max-height: 100vh;
 }
 
+#note-list {
+    font-size: 1rem;
+}
+
+h1.display-5 {
+    font-weight: 200;
+    font-size: 3em;
+}
+
 .container-fluid {
     margin: 0;
     padding: 0;
@@ -78,6 +87,29 @@ a:hover {
     color: #ffffff;
 }
 
+input#search-btn.btn.btn-outline-success {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    border-radius: 20px;
+    margin: 1.9rem;
+    color: #ddb892;
+    background-color: #ffffff;
+    border-color: #ddb892;
+    box-shadow: 0.2em 0.2em 0.2em #ddb892;
+    padding: 0.7rem 4rem;
+    outline: none;
+}
+
+input#search-btn.btn.btn-outline-success:hover {
+    border: 1px solid #dfab78;
+    color: #dfab78;
+    transform: scale(1.1, 1.1);
+    box-shadow: 0.5em 0.5em 0.5em #ddb892;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
 a#create-btn.btn.btn-outline-success {
     font-size: 1.8rem;
     font-weight: 300;
@@ -98,6 +130,11 @@ a#create-btn.btn.btn-outline-success {
     font-size: 1.5rem;
     padding: 0.8rem 1.2rem;
   }
+  input#search-btn.btn.btn-outline-success {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+}
 }
 
 @media (max-width: 850px) {
@@ -112,6 +149,11 @@ a#create-btn.btn.btn-outline-success {
     font-size: 0.9rem;
 
   }
+  #form-button {
+    font-size: 1em;
+    margin-bottom: 10px;
+    box-shadow: 0.2em 0.2em 0.2em #83c5be;
+}
 }
 
 a#create-btn.btn.btn-outline-success:hover {
@@ -161,6 +203,7 @@ img {
     padding: 1rem 2.5rem;
     background-color: #ffffff;
     border-color: #83c5be;
+    border-radius: 20px;
     box-shadow: 0.2em 0.2em 0.2em #83c5be;
 }
 
