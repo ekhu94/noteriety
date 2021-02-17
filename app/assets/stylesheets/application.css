@@ -88,8 +88,30 @@ a#create-btn.btn.btn-outline-success {
     background-color: #ffffff;
     border-color: #ddb892;
     box-shadow: 0.2em 0.2em 0.2em #ddb892;
-    padding: 1.2em 2.2em;
+    padding: 0.2rem 0.6rem;
     outline: none;
+}
+
+
+@media (max-width: 992px) {
+  a#create-btn.btn.btn-outline-success {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  a#create-btn.btn.btn-outline-success {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 640px) {
+  a#create-btn.btn.btn-outline-success {
+    font-size: 0.9rem;
+
+  }
 }
 
 a#create-btn.btn.btn-outline-success:hover {
@@ -100,22 +122,6 @@ a#create-btn.btn.btn-outline-success:hover {
     box-shadow: 0.5em 0.5em 0.5em #ddb892;
     transition: all 0.4s;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  a.btn.btn-outline-success {
-    margin-top: 0;
-    font-size: 1rem;
-    padding:0.5em 1em;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 992px) {
-  a.btn.btn-outline-success {
-    margin-top: 10px;
-    font-size: 1.5rem;
-  }
 }
 
 .blockquote-footer {
