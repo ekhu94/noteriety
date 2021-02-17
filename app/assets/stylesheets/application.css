@@ -134,7 +134,7 @@ a#create-btn.btn.btn-outline-success {
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 0.4em;
-}
+  }
 }
 
 @media (max-width: 850px) {
@@ -149,11 +149,6 @@ a#create-btn.btn.btn-outline-success {
     font-size: 0.9rem;
 
   }
-  #form-button {
-    font-size: 1em;
-    margin-bottom: 10px;
-    box-shadow: 0.2em 0.2em 0.2em #83c5be;
-}
 }
 
 a#create-btn.btn.btn-outline-success:hover {
@@ -201,6 +196,8 @@ img {
     font-size: 1.2em;
     font-weight: 200;
     padding: 1rem 2.5rem;
+    margin: 10px auto; /* Added */
+    float: none;
     background-color: #ffffff;
     border-color: #83c5be;
     border-radius: 20px;
@@ -234,4 +231,21 @@ h4.alert-heading {
     font-size: 0.8rem;
     background-color: #edf6f9;
     color: #e29578;
+}
+
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        font-size: 1rem;
+}
+
+.card-body h5 a {
+    color: #000;
+    font-size: 2rem;
+}
+
+.card-body h5 a:hover {
+    color: #000;
+    opacity: 0.6;
 }

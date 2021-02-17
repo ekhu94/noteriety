@@ -1,8 +1,31 @@
-<h1 class="display-3">All Subjects</h1>
+<div class="container text-center">
+    <h1 class="display-5 my-4">SUBJECTS</h1>
 
-<% @subjects.each do |s| %>
-    <h2 class="display-6"><%= link_to s.name, subject_path(s) %></h2>
-    <div>
-        <% s.notes %>
+    <div class="row">
+        <% @subjects.uniq.each do |s| %>
+            <div class="col-sm-6">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title display-6 mb-2"><%= link_to s.name, subject_path(s) %></h5>
+                        <% i = 0 %>
+                        <ol>
+                            <% while i < 3 && i < s.notes.length %>
+                                <li><%= link_to s.notes[i].topic, note_path(s.notes[i]) %></li>
+                                <% i += 1 %>
+                            <% end %>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        <% end %>
     </div>
-<% end %>
+
+    <div class="row text-center my-5">
+        <div class="col-lg-1"></div>
+        <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
+        <div class="col-md-2"></div>
+        <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
+        <div class="col-lg-1"></div>
+    </div>
+
+</div>

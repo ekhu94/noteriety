@@ -10,7 +10,7 @@
     </div>
 
     <div id="note-list" class="row m-2">
-        <% @notes.each do |n| %>
+        <% @notes.sort_by_date.each do |n| %>
             <div class="col-lg-4 col-sm-6">
                 <h5><%= link_to n.topic, note_path(n) %></h5>
                 <div>Subject: <%= link_to n.subject.name, subject_path(n.subject) %></div>
@@ -20,10 +20,10 @@
     </div>
 
     <div class="row text-center my-5">
-        <div class="col-md-1"></div>
-        <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg btn-block' , id: 'form-button' %>
+        <div class="col-lg-1"></div>
+        <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
         <div class="col-md-2"></div>
-        <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg btn-block', id: 'form-button' %>
-        <div class="col-md-1"></div>
+        <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
+        <div class="col-lg-1"></div>
     </div>
 </div>

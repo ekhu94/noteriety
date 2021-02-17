@@ -5,7 +5,7 @@ class Note < ApplicationRecord
     accepts_nested_attributes_for :bullet_points
     has_one :summary, dependent: :destroy
 
-    validates :topic, :content, presence: true
+    validates :topic, :content, :subject, presence: true
     validates :bullet_points, presence: true, length: { minimum: 1, too_short: "At least 1 bullet point is required",
                                         maximum: 3, too_long: "3 bullet points is the maximum permitted" }
     validates_presence_of :summary_note, message: "must be included at the end"
@@ -16,6 +16,10 @@ class Note < ApplicationRecord
         else
             self.all
         end
+    end
+
+    def self.sort_by_date
+        self.order(created_at: :desc)
     end
 
     def subject_name=(name)
