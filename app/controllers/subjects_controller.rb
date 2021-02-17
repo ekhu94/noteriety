@@ -3,6 +3,8 @@ class SubjectsController < ApplicationController
     before_action :require_login
     before_action :set_subject, only: [:show]
 
+    validates :name, presence: true
+
     def index
         @subjects = Subject.all
     end

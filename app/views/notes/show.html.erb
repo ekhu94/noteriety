@@ -1,5 +1,7 @@
 <div id="form-container" class="container shadow-lg">
 
+    <div><%= flash.now[:new_success] %></div>
+
     <h1><%= @note.topic %></h1>
     <h3 class="py-3">Subject: <%= @note.subject.name %></h3>
     <h4>Content</h4>

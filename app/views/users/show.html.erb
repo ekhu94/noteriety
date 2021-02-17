@@ -1,1 +1,30 @@
-<h1 class="display-3"><%= current_user.username %></h1>
+<div id="form-container" class="container shadow-lg text-center">
+
+    <h1 class="display-3 text-center"><%= current_user.username.upcase %></h1>
+
+    <div class="row mt-1">
+        <%= image_tag 'profile_pic.jpeg', id: 'profile-img' %>
+    </div>
+
+    <div class="row mt-1">
+        <h4>Joined On: <%= current_user.created_at.strftime('%B %e, %Y') %></h4>
+    </div>
+
+    <div class="row mt-1">
+        <h4>Total Notes: <%= current_user.notes.length %></h4>
+    </div>
+
+    <div class="row mt-1">
+        <h4>Subjects:
+            <% current_user.subjects.uniq.each_with_index do |subject, i| %>
+                <%= link_to subject.name, subject_path(subject) %>
+                <%= ", " if i < current_user.subjects.uniq.length - 1 %>
+            <% end %>
+        </h4>
+    </div>
+
+    <div class="row mt-1">
+        <h4>Most Recent Post: <%= link_to current_user.most_recent_note.topic, note_path(current_user.most_recent_note) %></h4>
+    </div>
+
+</div>

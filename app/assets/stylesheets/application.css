@@ -72,7 +72,7 @@ a:hover {
 .carousel-item {
     opacity: 0.8;
     width: 100%;
-    height: 440px;
+    height: 441px;
     font-size: 1.3rem;
     background-size: contain;
     /* z-index: -1; */
@@ -178,7 +178,6 @@ img {
     background-color: #ffffff;
     color: #7f5539;
     margin-top: 3em;
-    margin-bottom: 3rem;
     width: 80%;
     height: 10%;
     border-radius: 8px;
@@ -248,4 +247,11 @@ h4.alert-heading {
 .card-body h5 a:hover {
     color: #000;
     opacity: 0.6;
+}
+
+img#profile-img {
+    margin: 20px auto;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px #dfab78 solid;
 }
