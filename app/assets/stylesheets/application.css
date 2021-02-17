@@ -222,6 +222,15 @@ img {
     box-shadow: 0.5em 0.5em 0.5em #ddb892;
 }
 
+#form-button.btn-white {
+    border-color: #e56b6f;
+    box-shadow: 0.2em 0.2em 0.2em #e56b6f;
+}
+
+#form-button.btn-white:hover {
+    box-shadow: 0.5em 0.5em 0.5em #e56b6f;
+}
+
 h4.alert-heading {
     font-size: 1.4rem;
 }

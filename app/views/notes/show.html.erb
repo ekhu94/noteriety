@@ -25,11 +25,11 @@
     <p><%= @note.summary_note %></p>
     
     <div class="row text-center my-4">
-        <div class="col-lg-1"></div>
-        <%= link_to "Edit", edit_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
-        <div class="col-md-2"></div>
-        <%= link_to "Back to all notes", notes_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
-        <div class="col-lg-1"></div>
+        <%= link_to "Edit", edit_note_path, class: 'btn btn-outline-success col-md-3 btn-block' , id: 'form-button' %>
+        <%= link_to "Back to all notes", notes_path, class: 'btn btn-outline-info col-md-4 btn-block', id: 'form-button' %>
+        <%= link_to note_path(@note), method: :delete, class: 'btn btn-white col-md-3 btn-block', id: 'form-button', data: {confirm: "Are you sure you want to delete this note?"} do %>
+            Delete
+        <% end %>
     </div>
 
 </div>
