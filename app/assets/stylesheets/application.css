@@ -30,14 +30,15 @@ body {
 
 .navbar.navbar-expand-md.navbar-dark {
     font-size: 1.2rem;
-    background-color: #bd8e6c;
+    background-color: #b08968;
     text-shadow: 0.2px 0 0 #d1d1d1, 0 -0.2px 0 #d1d1d1, 0 0.2px 0 #d1d1d1, -0.2px 0 0 #d1d1d1;
+    opacity: 0.9;
 }
 
 .navbar-nav > li > .dropdown-menu { 
-    background-color: #bd8e6c;
+    background-color: #b08968;
     border: none;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .dropdown-item {
@@ -54,47 +55,58 @@ a:hover {
     color: #e2a58f;
 }
 
+#carousel-p {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
 .carousel-item {
     opacity: 0.8;
     width: 100%;
     height: 440px;
     font-size: 1.3rem;
     background-size: contain;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .blockquote p {
     font-size: 1.8rem;
 }
 
+.blockquote-footer {
+    font-weight: 400;
+    color: #ffffff;
+}
+
 a#create-btn.btn.btn-outline-success {
-    font-size: 2.3rem;
-    font-weight: 200;
+    font-size: 1.8rem;
+    font-weight: 300;
     letter-spacing: 0.2em;
-    color: #83c5be;
-    border-color: #83c5be;
     border-radius: 16px;
-    background: none;
-    border: 2px solid;
-    padding: 1em 2em;
+    margin: 1.8rem;
+    color: #ddb892;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-color: #ddb892;
+    box-shadow: 0.2em 0.2em 0.2em #ddb892;
+    padding: 1.2em 2.2em;
     outline: none;
 }
 
 a#create-btn.btn.btn-outline-success:hover {
-    background-color: #83c5be;
-    color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 0.5em 0.5em -0.4em;
-    transform: scale(0.8, 0.8);
-    font-weight: 400;
-    transition: all 0.3s;
+    color: #ffffff;
+    background-color: #ddb892;
+    border: 1px solid #ddb892;
+    box-shadow: none;
+    transform: scale(0.9, 0.9);
+    transition: all 0.4s;
     cursor: pointer;
 }
 
 @media (max-width: 768px) {
   a.btn.btn-outline-success {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding:0.5em 1em;
     line-height: 1;
   }
@@ -102,10 +114,8 @@ a#create-btn.btn.btn-outline-success:hover {
 
 @media (min-width: 769px) and (max-width: 992px) {
   a.btn.btn-outline-success {
-    margin-top: 1.2em;
-    padding:4px 9px;
-    margin-top: 400px;
-    font-size: 2.0rem;
+    margin-top: 10px;
+    font-size: 1.5rem;
   }
 }
 
