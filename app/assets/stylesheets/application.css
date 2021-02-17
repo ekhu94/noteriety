@@ -93,7 +93,7 @@ input#search-btn.btn.btn-outline-success {
     letter-spacing: 0.5em;
     border-radius: 20px;
     margin: 1.9rem;
-    color: #ddb892;
+    color: #e2ae79;
     background-color: #ffffff;
     border-color: #ddb892;
     box-shadow: 0.2em 0.2em 0.2em #ddb892;
@@ -103,7 +103,7 @@ input#search-btn.btn.btn-outline-success {
 
 input#search-btn.btn.btn-outline-success:hover {
     border: 1px solid #dfab78;
-    color: #dfab78;
+    color: #000;
     transform: scale(1.1, 1.1);
     box-shadow: 0.5em 0.5em 0.5em #ddb892;
     transition: all 0.4s;
