@@ -4,7 +4,7 @@
     <div class="row">
         <% @subjects.uniq.each do |s| %>
             <div class="col-sm-6">
-                <div class="card text-center" style="width: 18rem;">
+                <div class="card text-center shadow-sm" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title display-6 mb-2"><%= link_to s.name, subject_path(s) %></h5>
                         <% i = 0 %>

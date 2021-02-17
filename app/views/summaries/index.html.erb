@@ -1,9 +1,26 @@
-<h1>All Summaries</h1>
+<div class="container text-center">
+    <h1 class="display-5 my-4">SUMMARIES</h1>
 
-<% current_user.subjects.uniq.each do |subject| %>
-    <h4>Subject: <%= subject.name %></h4>
-    <% subject.notes.each do |n| %>
-        <div><%= link_to n.topic, note_path(n) %></div>
-    <% end %>
-<% end %>
+    <div id="note-list" class="row m-2">
+        <% current_user.subjects.uniq.each do |subject| %>
+            <div class="col-12">
+                <h5 class="display-6 m-4"><%= subject.name %></h5>
+            </div>
+            <% subject.notes.each do |n| %>
+                <div class="col-lg-4 col-sm-6">
+                    <h6><%= link_to n.topic, note_path(n) %></h6>
+                    <%= n.summary_note %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+
+    <div class="row text-center my-5">
+        <div class="col-lg-1"></div>
+        <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
+        <div class="col-md-2"></div>
+        <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
 
