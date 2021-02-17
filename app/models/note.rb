@@ -5,10 +5,11 @@ class Note < ApplicationRecord
     accepts_nested_attributes_for :bullet_points
     has_one :summary, dependent: :destroy
 
-    validates :topic, :content, :subject, presence: true
-    validates :bullet_points, presence: true, length: { minimum: 1, too_short: "At least 1 bullet point is required",
-                                        maximum: 3, too_long: "3 bullet points is the maximum permitted" }
+    validates :topic, :content, presence: true, uniqueness: true
+    validates :bullet_points, presence: true, length: { minimum: 1, maximum: 3, 
+                                                        too_long: "cannot exceed 3 at a time" }
     validates_presence_of :summary_note, message: "must be included at the end"
+    validates_presence_of :subject_name, message: "must belong to a subject"
 
     def self.search(query)
         if query.present?
