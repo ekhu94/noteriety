@@ -64,6 +64,10 @@ a:hover {
     color: #e2a58f;
 }
 
+i.far.fa-edit.ms-2 {
+    color: #b85c3a;
+}
+
 #carousel-p {
     font-size: 1.4rem;
     font-weight: 300;
@@ -72,7 +76,7 @@ a:hover {
 .carousel-item {
     opacity: 0.8;
     width: 100%;
-    height: 441px;
+    height: 450px;
     font-size: 1.3rem;
     background-size: contain;
     /* z-index: -1; */

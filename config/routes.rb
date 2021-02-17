@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :summaries
   resources :users, only: [:show, :new, :create]
   resources :subjects
+  get '/about', to: 'static#about'
   get '/login', to: 'users#login'
   post '/login', to: 'users#login_action'
   post '/logout', to: 'users#logout'

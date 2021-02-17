@@ -15,7 +15,7 @@
                 <tr>
                     <td><%= link_to n.topic, note_path(n) %></td>
                     <td><%= n.created_at.strftime('%-m/%e/%Y') %></td>
-                    <td><a href="<%= edit_note_path %>"><i class="far fa-edit ms-2 text-info"></i></a></td>
+                    <td><a href="<%= edit_note_path %>"><i class="far fa-edit ms-2"></i></a></td>
                     <td>
                         <%= link_to note_path(n), method: :delete, class: 'btn btn-white ms-3 p-0', data: {confirm: "Are you sure you want to delete this note?"} do %>
                             <i class="far fa-trash-alt text-danger"></i>
