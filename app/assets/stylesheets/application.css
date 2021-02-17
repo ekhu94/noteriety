@@ -15,12 +15,34 @@
  */
 body {
     font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 200;
     background-color: white;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar.navbar-expand-md.navbar-dark {
     font-size: 1.2rem;
-    background-color: #028996;
+    background-color: #bd8e6c;
+    text-shadow: 0.2px 0 0 #d1d1d1, 0 -0.2px 0 #d1d1d1, 0 0.2px 0 #d1d1d1, -0.2px 0 0 #d1d1d1;
+}
+
+.navbar-nav > li > .dropdown-menu { 
+    background-color: #bd8e6c;
+    border: none;
+    z-index: 1;
+}
+
+.dropdown-item {
+    color: #ffffff; 
+    font-weight: 200;
 }
 
 a {
@@ -30,4 +52,72 @@ a {
 
 a:hover {
     color: #e2a58f;
+}
+
+.carousel-item {
+    opacity: 0.8;
+    width: 100%;
+    height: 440px;
+    font-size: 1.3rem;
+    background-size: contain;
+    z-index: -1;
+}
+
+.blockquote p {
+    font-size: 1.8rem;
+}
+
+a#create-btn.btn.btn-outline-success {
+    font-size: 2.3rem;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    color: #83c5be;
+    border-color: #83c5be;
+    border-radius: 16px;
+    background: none;
+    border: 2px solid;
+    padding: 1em 2em;
+    outline: none;
+}
+
+a#create-btn.btn.btn-outline-success:hover {
+    background-color: #83c5be;
+    color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transform: scale(0.8, 0.8);
+    font-weight: 400;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  a.btn.btn-outline-success {
+    margin-top: 0;
+    font-size: 1.5rem;
+    padding:0.5em 1em;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  a.btn.btn-outline-success {
+    margin-top: 1.2em;
+    padding:4px 9px;
+    margin-top: 400px;
+    font-size: 2.0rem;
+  }
+}
+
+.blockquote-footer {
+    font-size: 1rem;
+}
+
+.carousel-caption {
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+img {
+    max-width: 100%;
+    background-size: contain;
 }

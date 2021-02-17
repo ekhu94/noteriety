@@ -1,3 +1,54 @@
-<%= flash.now[:destroy_success] %>
-<h1>Noteriety Home Page</h1>
-<h2>Welcome, <%= current_user.username %></h2>
+<div id="carouselExampleIndicators" class="carousel slide mx-auto my-auto" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="<%= subjects_path %>">
+        <%= image_tag("carousel-1.jpg", :alt => "slide-1", class: 'd-block w-100') %>
+        <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-5">Capture your best thoughts</h2>
+            <blockquote class="blockquote">
+                <p class="mb-3">Anything that is not managed will deteriorate.</p>
+                <footer class="blockquote-footer">CreateSpace Independent Publishing</footer>
+            </blockquote>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="<%= subjects_path %>">
+        <%= image_tag("carousel-2.jpg", :alt => "slide-2", class: 'd-block w-100') %>
+        <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-6">A website based on the Cornell Notes System</h2>
+            <p>Identify keywords and questions from each lecture, reinforce every topic.</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="<%= subjects_path %>">
+        <%= image_tag("carousel-3.jpg", :alt => "slide-3", class: 'd-block w-100') %>
+        <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-6">Organized thoughts, life-long habits</h2>
+            <blockquote class="blockquote">
+                <p class="mb-3">The weakest ink is stronger than the strongest memory.</p>
+                <footer class="blockquote-footer">The Exponential Growth Strategist</footer>
+            </blockquote>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <%= link_to "Write a new note", new_note_path, class: 'btn btn-outline-success mt-1 mx-2 px-4 py-1', id: 'create-btn' %>
+</div>
