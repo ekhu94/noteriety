@@ -11,7 +11,7 @@
 
 <div id="form-container" class="container shadow-lg">   
     <h1 class="display-5 text-center">
-        <%= action_name == 'new' ? "New Note" : "Edit Note" %>
+        <%= controller_name == 'notes' && action_name == 'edit' ? "Edit Note" : "New Note" %>
     </h1>
     <%= form_for note do |f| %>
         <div class="form-row">
@@ -55,12 +55,11 @@
         <div class="form-row">
             <div class="form-group">
                 <%= f.submit class: 'form-control btn btn-outline-primary btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
-                <% if action_name == 'new' %>
-                    <%= link_to "Back", notes_path, class: 'form-control btn btn-outline-info btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
-                <% else %>
+                <% if controller_name == 'notes' && action_name == 'edit' %>
                     <%= link_to "Back", note_path(@note), class: 'form-control btn btn-outline-info btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
+                <% else %>
+                    <%= link_to "Back", notes_path, class: 'form-control btn btn-outline-info btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
                 <% end %>
-                
             </div>
         </div>
     <% end %>
