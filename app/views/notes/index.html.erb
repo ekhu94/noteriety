@@ -16,7 +16,7 @@
         <% end %>
     </div>
     <div id="note-list" class="row justify-content-center m-2">
-        <% current_user.notes.sort_by_date.each do |n| %>
+        <% @notes.sort_by_date.each do |n| %>
             <div class="col-lg-4 col-sm-6 mt-5">
                 <h5><%= link_to n.topic, note_path(n) %></h5>
                 <div>Subject: <%= link_to n.subject.name, subject_path(n.subject) %></div>

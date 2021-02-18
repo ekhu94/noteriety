@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
 
     def index
-        @notes = Note.search(params[:query])
+        @notes = current_user.notes.search(params[:query])
         render :index
     end
 
