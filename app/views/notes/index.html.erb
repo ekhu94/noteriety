@@ -5,9 +5,13 @@
     <% end %>
     <div>
         <%= form_tag notes_path, method: :get do %>
-            <div class="form-group">
-            <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: "Find notes by topic..." %>
-            <%= submit_tag "Search", title: nil, class: 'btn btn-outline-success btn-lg btn-block', id: 'search-btn' %>
+            <div class="row justify-content-center">
+                <div class="form-group col-6 col-lg-4">
+                    <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: "Find notes by topic...", id: "search-bar" %>
+                </div>
+                <div class="form-group col-lg-2">
+                    <%= submit_tag "Search", title: nil, class: 'btn btn-outline-success btn-lg btn-block', id: 'search-btn' %>
+                </div>
             </div>
         <% end %>
     </div>
@@ -21,10 +25,9 @@
         <% end %>
     </div>
 
-    <div class="row text-center my-5">
+    <div class="row justify-content-center text-center my-5">
         <div class="col-lg-1"></div>
         <%= link_to "Create New Note", new_note_path, class: 'btn btn-outline-success col-md-4 btn-lg-3 btn-block' , id: 'form-button' %>
-        <div class="col-md-2"></div>
         <%= link_to "Home", root_path, class: 'btn btn-outline-info col-md-4 btn-lg-3 btn-block', id: 'form-button' %>
         <div class="col-lg-1"></div>
     </div>

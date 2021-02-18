@@ -121,24 +121,31 @@ i.far.fa-edit.ms-2 {
     color: #ffffff;
 }
 
+input#search-bar {
+    position: relative;
+    top: 6px;
+    height: 40px;
+    margin-bottom: 0.6rem;
+}
+
 input#search-btn.btn.btn-outline-success {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.3em;
     border-radius: 20px;
-    margin: 1.9rem;
+    margin-bottom: 1rem;
     color: #e2ae79;
     background-color: #ffffff;
     border-color: #ddb892;
     box-shadow: 0.2em 0.2em 0.2em #ddb892;
-    padding: 0.7rem 4rem;
+    padding: 0.7rem 2rem;
     outline: none;
 }
 
 input#search-btn.btn.btn-outline-success:hover {
     border: 1px solid #dfab78;
     color: #000;
-    transform: scale(1.1, 1.1);
+    transform: scale(0.8, 0.8);
     box-shadow: 0.5em 0.5em 0.5em #ddb892;
     transition: all 0.4s;
     cursor: pointer;
