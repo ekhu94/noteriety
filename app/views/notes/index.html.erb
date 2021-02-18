@@ -1,5 +1,8 @@
 <div class="container text-center">
     <h1 class="display-5 my-4">Notes</h1>
+    <% if current_user.notes.length == 0 %>
+        <h4>No notes yet to display!</h4>
+    <% end %>
     <div>
         <%= form_tag notes_path, method: :get do %>
             <div class="form-group">
@@ -8,9 +11,8 @@
             </div>
         <% end %>
     </div>
-
     <div id="note-list" class="row m-2">
-        <% @notes.sort_by_date.each do |n| %>
+        <% current_user.notes.sort_by_date.each do |n| %>
             <div class="col-lg-4 col-sm-6 mt-5">
                 <h5><%= link_to n.topic, note_path(n) %></h5>
                 <div>Subject: <%= link_to n.subject.name, subject_path(n.subject) %></div>

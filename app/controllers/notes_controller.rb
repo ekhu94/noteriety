@@ -20,7 +20,7 @@ class NotesController < ApplicationController
         @note = Note.new(note_params)
         @note.user = current_user
         if @note.save
-            current_user.notes << @note
+            # current_user.notes << @note
             flash.now[:new_success] = "Your new note has successfully been saved!"
             redirect_to note_path(@note)
         else

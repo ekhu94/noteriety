@@ -1,6 +1,8 @@
 <div class="container text-center">
     <h1 class="display-5 my-4">Summaries</h1>
-
+    <% if current_user.notes.length == 0 %>
+        <h4>No summaries yet to display!</h4>
+    <% end %>
     <div id="note-list" class="row m-2">
         <% current_user.subjects.uniq.each do |subject| %>
             <div class="col-12">

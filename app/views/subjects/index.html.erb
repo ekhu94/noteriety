@@ -1,8 +1,10 @@
 <div class="container text-center">
     <h1 class="display-5 my-4">Subjects</h1>
-
+    <% if current_user.subjects.uniq.length == 0 %>
+        <h4>No subjects yet to display!</h4>
+    <% end %>
     <div class="row">
-        <% @subjects.uniq.each do |s| %>
+        <% current_user.subjects.uniq.each do |s| %>
             <div class="col-sm-6">
                 <div class="card text-center shadow-sm" style="width: 18rem;">
                     <div class="card-body">
