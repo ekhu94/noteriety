@@ -20,13 +20,15 @@ You should be switched to version ```2.7.1``` You can install the correct ruby v
 rbenv install 2.7.1
 ```
 
-### Install dependencies
+### Install dependencies and run migrations
 
 Run [Bundle](https://github.com/rubygems/bundler) and [Yarn](https://github.com/yarnpkg/yarn). This may take a while.
 
 ```bash
 bundle && yarn
 ```
+
+Once dependencies are installed, use ```rails db:migrate``` to generate active record migrations.
 
 ## Serve
 
