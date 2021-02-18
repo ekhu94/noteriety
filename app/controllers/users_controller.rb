@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
 
     def logout
-        session.clear
+        session.delete :user_id
         flash[:logged_out] = "You have successfully logged out."
         redirect_to login_path
     end

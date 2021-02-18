@@ -24,7 +24,9 @@
     </div>
 
     <div class="row mt-1">
-        <h4>Most Recent Post: <%= link_to current_user.most_recent_note.topic, note_path(current_user.most_recent_note) %></h4>
+        <% if current_user.most_recent_note %>
+            <h4>Most Recent Post: <%= link_to current_user.most_recent_note.topic, note_path(current_user.most_recent_note) %></h4>
+        <% end %>
     </div>
 
 </div>
