@@ -341,5 +341,9 @@ img#profile-img {
 }
 
 .blockquote p {
+    font-size: 1.8rem;
+}
+
+.blockquote.about p {
     font-size: 1rem;
 }
