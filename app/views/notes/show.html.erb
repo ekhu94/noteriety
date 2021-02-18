@@ -4,6 +4,12 @@
     </div>
 <% end %>
 
+<% if flash[:update_success] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:update_success] %>
+    </div>
+<% end %>
+
 <div id="form-container" class="container shadow-lg px-5 pt-5">
 
     <h1><%= @note.topic %></h1>

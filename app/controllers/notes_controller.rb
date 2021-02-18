@@ -34,6 +34,7 @@ class NotesController < ApplicationController
 
     def update
         if @note.update(note_params)
+            flash[:update_success] = "You have successfully updated this note."
             redirect_to note_path(@note)
         else
             render :edit
