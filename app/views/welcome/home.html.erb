@@ -1,3 +1,9 @@
+<% if flash[:destroy_success] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:destroy_success] %>
+    </div>
+<% end %>
+
 <div class="d-grid gap-2 col-6 mx-auto">
   <%= link_to "Write a new note", new_note_path, class: 'btn btn-outline-success', id: 'create-btn' %>
 </div>

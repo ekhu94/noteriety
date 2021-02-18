@@ -43,7 +43,7 @@ class NotesController < ApplicationController
     def destroy
         @note.destroy
         subject_destroy(@note.subject)
-        flash.now[:destroy_success] = "You have successfully deleted this note."
+        flash[:destroy_success] = "You have successfully deleted this note."
         redirect_to root_path
     end
 
