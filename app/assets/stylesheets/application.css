@@ -44,24 +44,49 @@ p.lead {
 
 .navbar.navbar-expand-md.navbar-dark {
     font-size: 1.2rem;
-    background-color: #b08968;
-    text-shadow: 0.2px 0 0 #d1d1d1, 0 -0.2px 0 #d1d1d1, 0 0.2px 0 #d1d1d1, -0.2px 0 0 #d1d1d1;
-    opacity: 0.8;
+    font-weight: 300;
+    color: #e1e1e1;
+    background-color: #ddb185;
+    /* text-shadow: 0.2px 0 0 #d1d1d1, 0 -0.2px 0 #d1d1d1, 0 0.2px 0 #d1d1d1, -0.2px 0 0 #d1d1d1; */
+    /* opacity: 0.8; */
+}
+
+.navbar.navbar-expand-md.navbar-dark a:hover {
+    color: #ffffff;
 }
 
 .navbar-nav > li > .dropdown-menu { 
-    background-color: #b08968;
+    background-color: #ddb185;
     border: none;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 .dropdown-item {
-    color: #ffffff; 
+    color: #fff; 
     font-weight: 200;
 }
 
+a.dropdown-item:hover {
+    color: #000 !important;
+}
+
+a.dropdown-item:active {
+    color: #000;
+    background-color: #fff;
+}
+
+#logout:focus {
+    outline: none;
+    background-color: #fff;
+}
+
+#logout:active {
+    color: #000;
+    background-color: #fff;
+}
+
 a {
-    color: #b85c3a;
+    color: #b66649;
     text-decoration: none;
 }
 
@@ -84,7 +109,7 @@ i.far.fa-edit.ms-2 {
     height: 450px;
     font-size: 1.3rem;
     background-size: contain;
-    /* z-index: -1; */
+    z-index: -1;
 }
 
 .blockquote p {
@@ -267,11 +292,16 @@ h4.alert-heading {
     font-size: 1.4rem;
 }
 
+.alert.alert-success {
+    font-size: 1rem;
+    background-color: #acf0e1;
+    color: #006d77;
+}
+
 .alert.alert-danger.alert-dismissible.fade.show {
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    background-color: #edf6f9;
-    color: #e29578;
+    font-size: 1rem;
+    background-color: #f7ede2;
+    color: #f07774;
 }
 
 .card {
@@ -296,4 +326,10 @@ img#profile-img {
     width: 200px;
     border-radius: 50%;
     border: 1px #dfab78 solid;
+}
+
+footer.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
