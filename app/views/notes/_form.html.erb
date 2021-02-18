@@ -9,17 +9,18 @@
   </div>
 <% end %>
 
-<div id="form-container" class="container shadow-lg">   
+<div id="form-container" class="container shadow-lg px-5 px-md-1">   
     <h1 class="display-5 text-center">
         <%= controller_name == 'notes' && action_name == 'edit' ? "Edit Note" : "New Note" %>
     </h1>
     <%= form_for note do |f| %>
-        <div class="form-row">
-            <div class="form-group">
+        <div class="row justify-content-center">
+            <div class="form-group col-md-5">
                 <%= f.label :topic %>
                 <%= f.text_field :topic, class: 'form-control' %>
             </div>
-            <div class="form-group">
+            <div class="col-md-auto"></div>
+            <div class="form-group col-md-5">
                 <%= f.label :subject_name, "Subject" %>
                 <%= f.text_field :subject_name, list: "subjects_autocomplete", class: 'form-control', placeholder: 'Find a subject or create a new one' %>
                 <datalist id="subjects_autocomplete">
@@ -30,30 +31,32 @@
             </div>
         </div>
     
-        <div class="form-row">
-            <div class="form-group">
+        <div class="row justify-content-center">
+            <div class="form-group col-md-10">
                 <%= f.label :content %>
-                <%= f.text_area :content, class: 'form-control', rows: '6', placeholder: 'Write down your main notes here...' %>
+                <%= f.text_area :content, class: 'form-control', rows: '8', placeholder: 'Write down your main notes here...' %>
             </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="bullet_points_attributes">Keywords/Questions</label>
+        <div class="row justify-content-center">
+            <div class="form-group col-md-8">
+                <div class="text-center">
+                    <label for="bullet_points_attributes">Keywords/Questions</label>
+                </div>
                 <%= f.fields_for :bullet_points do |builder| %>
                     <%= builder.text_field :keywords, :rows => 3, class: 'form-control mt-2' %>
                 <% end %>
             </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group">
+        <div class="row justify-content-center">
+            <div class="form-group col-md-10">
                 <%= f.label :summary_note, "Summary" %><br>
-                <%= f.text_area :summary_note, class: 'form-control', rows: '6', placeholder: 'Gather your thoughts and write a summary about this topic...' %>
+                <%= f.text_area :summary_note, class: 'form-control', rows: '8', placeholder: 'Gather your thoughts and write a summary about this topic...' %>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group">
+        <div class="row justify-content-center">
+            <div class="form-group col-8 col-md-6">
                 <%= f.submit class: 'form-control btn btn-outline-primary btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
                 <% if controller_name == 'notes' && action_name == 'edit' %>
                     <%= link_to "Back", note_path(@note), class: 'form-control btn btn-outline-info btn-lg btn-block mt-4 col-xs-6', id: "form-button" %>
