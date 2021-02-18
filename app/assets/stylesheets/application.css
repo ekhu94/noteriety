@@ -120,11 +120,11 @@ input#search-btn.btn.btn-outline-success:hover {
 }
 
 a#create-btn.btn.btn-outline-success {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: 0.2em;
     border-radius: 16px;
-    margin: 1.9rem;
+    margin: 1.3rem;
     color: #ddb892;
     background-color: #ffffff;
     border-color: #ddb892;
@@ -201,9 +201,9 @@ img {
 
 #form-button {
     color: #000;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 200;
-    padding: 1rem 2.5rem;
+    padding: .8rem 1.6rem;
     margin: 10px auto; /* Added */
     float: none;
     background-color: #ffffff;
@@ -242,7 +242,7 @@ img {
 
 #login-button {
     color: #000;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 200;
     padding: 0.8rem 1rem;
     margin: 10px auto; /* Added */
