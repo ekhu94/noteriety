@@ -1,4 +1,4 @@
-<div id="form-container" class="container shadow-lg">
+<div id="form-container" class="container shadow-lg px-5 pt-5">
 
     <div><%= flash.now[:new_success] %></div>
 
@@ -12,7 +12,7 @@
             <% @note.bullet_points.each do |bp| %>
                 <% if bp.keywords.present? %>
                     <li>
-                        <%= link_to bullet_point_path(bp), method: :delete, class: 'btn btn-white' do %>
+                        <%= link_to bullet_point_path(bp), method: :delete, class: 'btn btn-white', data: {confirm: "Are you sure you want clear this key point?"} do %>
                             <i class="far fa-trash-alt text-danger"></i>
                         <% end %>
                         <%= bp.keywords %>

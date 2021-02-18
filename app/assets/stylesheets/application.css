@@ -37,6 +37,10 @@ h1.display-5 {
     padding: 0;
 }
 
+p.lead {
+    font-size: 1.6rem;
+}
+
 .navbar.navbar-expand-md.navbar-dark {
     font-size: 1.2rem;
     background-color: #b08968;
@@ -181,13 +185,13 @@ img {
 #form-container.container {
     background-color: #ffffff;
     color: #7f5539;
-    margin-top: 3em;
+    margin-top: 2.5em;
     width: 80%;
     height: 10%;
     border-radius: 8px;
     border: 2px solid #ddc1a4;
     padding: 20px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .form-group {
@@ -235,12 +239,36 @@ img {
     box-shadow: 0.5em 0.5em 0.5em #e56b6f;
 }
 
+#login-button {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 200;
+    padding: 0.8rem 1rem;
+    margin: 10px auto; /* Added */
+    float: none;
+    background-color: #ffffff;
+    border-color: #83c5be;
+    border-radius: 20px;
+    box-shadow: 0.2em 0.2em 0.2em #83c5be;
+}
+
+#login-button:hover {
+    border: 1px solid #83c5be;;
+    color: #000;
+    /* font-weight: bold; */
+    transform: scale(0.9, 0.9);
+    box-shadow: 0.5em 0.5em 0.5em #83c5be;;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
 h4.alert-heading {
     font-size: 1.4rem;
 }
 
 .alert.alert-danger.alert-dismissible.fade.show {
     font-size: 0.8rem;
+    margin-top: 1rem;
     background-color: #edf6f9;
     color: #e29578;
 }
