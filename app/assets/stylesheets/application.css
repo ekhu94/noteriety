@@ -20,8 +20,13 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     max-height: 100vh;
 }
+
+/* .push {
+    height: 88px;
+} */
 
 #note-list {
     font-size: 1rem;
@@ -335,8 +340,6 @@ img#profile-img {
     border: 1px #dfab78 solid;
 }
 
-footer.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
+.blockquote p {
+    font-size: 1rem;
 }
