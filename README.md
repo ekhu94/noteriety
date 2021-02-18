@@ -14,7 +14,7 @@ git clone git@github.com:ekhu94/noteriety.git
 
 ### Check your ruby version with ```ruby -v```.
 
-You should be switched to version ```2.7.1``` You can install the right ruby version using [rbenv](https://github.com/rbenv/rbenv).
+You should be switched to version ```2.7.1``` You can install the correct ruby version using [rbenv](https://github.com/rbenv/rbenv).
 
 ```bash
 rbenv install 2.7.1
