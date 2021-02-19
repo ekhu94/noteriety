@@ -17,7 +17,7 @@
                         <% i = 0 %>
                         <ol>
                             <% while i < 3 && i < s.notes.length %>
-                                <li><%= link_to s.notes[i].topic, note_path(s.notes[i]) %></li>
+                                <li><%= link_to s.notes.sort_by_date[i].topic, note_path(s.notes.sort_by_date[i]) %></li>
                                 <% i += 1 %>
                             <% end %>
                         </ol>

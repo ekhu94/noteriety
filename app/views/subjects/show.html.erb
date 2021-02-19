@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <% @subject.notes.each do |n| %>
+            <% @subject.notes.sort_by_date.each do |n| %>
                 <tr>
                     <td class="td-title text-start"><%= link_to n.topic, note_path(n) %></td>
                     <td class="d-none d-lg-table-cell"><%= n.created_at.strftime('%-m/%e/%Y') %></td>

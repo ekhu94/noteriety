@@ -8,7 +8,7 @@
             <div class="col-12">
                 <h5 class="display-6 m-4"><%= subject.name %></h5>
             </div>
-            <% subject.notes.each do |n| %>
+            <% subject.notes.sort_by_date.each do |n| %>
                 <div class="col-lg-4 col-sm-6 my-3">
                     <h6><%= link_to n.topic, note_path(n) %></h6>
                     <%= n.summary_note %>
