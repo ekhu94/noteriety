@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     end
 
     def greeting(name)
-        time = DateTime.now.hour
+        time = Time.now.in_time_zone("Pacific Time (US & Canada)").hour
         if time >= 0 && time < 12
             "Good morning, #{name}"
         elsif time >= 12 && time < 18
