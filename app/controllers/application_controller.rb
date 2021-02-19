@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
     def greeting(name)
         time = Time.now.in_time_zone("Pacific Time (US & Canada)").hour
         if time >= 0 && time < 12
-            "Good morning, #{name}"
+            "Good morning, #{name}."
         elsif time >= 12 && time < 18
-            "Good afternoon, #{name}"
+            "Good afternoon, #{name}."
         else
-            "Good evening, #{name}"
+            "Good evening, #{name}."
         end
     end
 
