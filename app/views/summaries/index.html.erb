@@ -4,7 +4,7 @@
         <h4>No summaries yet to display!</h4>
     <% end %>
     <div id="note-list" class="row justify-content-center m-2">
-        <% current_user.subjects.uniq.each do |subject| %>
+        <% current_user.subjects.sort_alphabetically.uniq.each do |subject| %>
             <div class="col-12">
                 <h5 class="display-6 m-4"><%= subject.name %></h5>
             </div>
