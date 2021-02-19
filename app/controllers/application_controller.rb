@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     def date_today
-        DateTime.now.strftime('%B %e, %Y')
+        Time.now.in_time_zone("Pacific Time (US & Canada)").strftime('%B %e, %Y')
     end
 
     def greeting(name)
