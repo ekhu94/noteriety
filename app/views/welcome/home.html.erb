@@ -5,7 +5,7 @@
 <% end %>
 
 <div id="mobile-text" class="container text-center d-block d-md-none mt-4">
-  <h1 class="display-6">Hello, <%= current_user.username %></h1>
+  <h1 class="display-6"><%= greeting(current_user.username) %></h1>
   <p class="mb-0">Today is <%= date_today %>.</p>
 </div>
 
@@ -23,7 +23,7 @@
     <div class="carousel-item active">
         <%= image_tag("carousel-1.jpg", :alt => "slide-1", class: 'd-block w-100') %>
         <div class="carousel-caption d-none d-md-block">
-            <h2 class="display-4">Hello, <%= current_user.username %></h2>
+            <h2 class="display-4"><%= greeting(current_user.username) %></h2>
             <p id="carousel-p">Today is <%= date_today %>.</p>
         </div>
     </div>

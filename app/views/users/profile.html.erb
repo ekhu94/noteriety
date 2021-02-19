@@ -17,7 +17,7 @@
     <div class="row mt-1">
         <% if current_user.subjects.length > 0 %>
             <h4>Subjects:
-                <% current_user.subjects.uniq.each_with_index do |subject, i| %>
+                <% current_user.subjects.sort_alphabetically.uniq.each_with_index do |subject, i| %>
                     <%= link_to subject.name, subject_path(subject) %>
                     <%= ", " if i < current_user.subjects.uniq.length - 1 %>
                 <% end %>
