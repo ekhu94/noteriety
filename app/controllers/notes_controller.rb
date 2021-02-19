@@ -13,6 +13,7 @@ class NotesController < ApplicationController
 
     def new
         @note = Note.new
+        @note.bullet_points.destroy_all
         3.times { @note.bullet_points.build }
     end
 
@@ -24,6 +25,8 @@ class NotesController < ApplicationController
             flash[:new_success] = "Your new note has successfully been saved!"
             redirect_to note_path(@note)
         else
+            @note.bullet_points.destroy_all
+            3.times { @note.bullet_points.build }
             render :new
         end
     end

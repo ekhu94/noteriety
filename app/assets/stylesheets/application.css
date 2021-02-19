@@ -181,6 +181,9 @@ a#create-btn.btn.btn-outline-success {
     font-weight: 300;
     letter-spacing: 0.4em;
   }
+  td.td-title {
+      font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 850px) {
@@ -188,11 +191,14 @@ a#create-btn.btn.btn-outline-success {
     font-size: 1.2rem;
     font-weight: 300;
   }
+  td.td-title {
+      font-size: .9rem;
+  }
 }
 
 @media (max-width: 640px) {
   a#create-btn.btn.btn-outline-success {
-    font-size: 0.9rem;
+    font-size: .6rem;
 
   }
 }
@@ -223,7 +229,7 @@ img {
 #form-container.container {
     background-color: #ffffff;
     color: #7f5539;
-    margin-top: 2.5em;
+    margin-top: 2.2em;
     width: 80%;
     height: 10%;
     border-radius: 8px;
