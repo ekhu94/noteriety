@@ -31,7 +31,7 @@
             <% end %>
         </ul>
     <% end %>
-    <% if @note.summary_note %>
+    <% if @note.summary_note.any? %>
         <h4>Summary</h4>
         <p><%= simple_format(@note.summary_note) %></p>
     <% end %>
