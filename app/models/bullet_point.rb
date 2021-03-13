@@ -1,4 +1,4 @@
 class BulletPoint < ApplicationRecord
     belongs_to :note
-    validates :note, presence: true
+    # validates :note, presence: true
 end

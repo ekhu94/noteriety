@@ -272,7 +272,7 @@ img {
     color: #000;
     /* font-weight: bold; */
     transform: scale(0.9, 0.9);
-    box-shadow: 0.5em 0.5em 0.5em #83c5be;;
+    box-shadow: 0.5em 0.5em 0.5em #83c5be;
     transition: all 0.4s;
     cursor: pointer;
 }
