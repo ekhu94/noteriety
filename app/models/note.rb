@@ -5,7 +5,7 @@ class Note < ApplicationRecord
     accepts_nested_attributes_for :bullet_points
     has_one :summary, dependent: :destroy
 
-    validates :title, :content, presence: true, uniqueness: true
+    validates :content, presence: true, uniqueness: true
     # validates :bullet_points, presence: true, length: { minimum: 1, maximum: 3, 
     #                                                     too_long: "cannot exceed 3 at a time" }
     # validates_presence_of :summary_note, message: "must be included at the end"
