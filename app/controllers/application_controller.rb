@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
 
     def date_today
-        Time.now.in_time_zone("Pacific Time (US & Canada)").strftime('%B %e, %Y')
+        Time.now.in_time_zone("Japan").strftime('%B %e, %Y')
     end
 
     def greeting(name)
-        time = Time.now.in_time_zone("Pacific Time (US & Canada)").hour
+        time = Time.now.in_time_zone("Japan").hour
         if time >= 0 && time < 12
             "Good morning, #{name}."
         elsif time >= 12 && time < 18
